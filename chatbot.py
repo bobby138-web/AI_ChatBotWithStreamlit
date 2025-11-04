@@ -1,7 +1,7 @@
 import streamlit as st
 from tranformers import pipeline
 
-st.set_page_config(page_title="Evans - ChatBot")
+st.set_page_config(page_title="bobby - ChatBot")
 
 def load_text_generator():
     text_generator = pipeline("text-generation", model="gpt2")
@@ -25,7 +25,7 @@ def build_conversation_prompt(chat_history, user_question):
     formated_conversation.append(f"User: {user_question}\nAssistant:")
     return SYTEM_INSTRUCTIONS + "\n" + "\n".join(formated_conversation)
 
-st.title("Evans - ChatBot UI")
+st.title("bobby - ChatBot UI")
 st.caption("Ask me anything about software Engineering")
 
 
@@ -45,7 +45,7 @@ for user_message, ai_reply in st.session_state.chat_history:
     st.chat_message("assistant").markdown(ai_reply)
 
 # User input
-user_input = st.chat_input("As JsMummie Anything....")
+user_input = st.chat_input("As iambobby Anything....")
 if user_input:
     st.chat_message("user").markdown(user_input)
 
